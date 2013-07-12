@@ -2,7 +2,7 @@
 
 # Check the NotEnoughMods mod list to compare the latest versions of mods with your versions
 
-MC_VERSION = "1.5.1"
+MC_VERSION = "1.5.2"
 BOT_URL = "http://bot.notenoughmods.com/%s.json"
 ALL_MODS_DIR = "allmods"
 
@@ -66,8 +66,8 @@ def main():
     else:
         localRoots = sys.argv[1:]
 
-    data = file("/Users/admin/Downloads/1.5.1.json").read()
-    #data = urllib2.urlopen(BOT_URL % (MC_VERSION,)).read()
+    #data = file("/Users/admin/Downloads/1.5.1.json").read()
+    data = urllib2.urlopen(BOT_URL % (MC_VERSION,)).read()
     remoteMods = json.loads(data)
 
     compareLocalMods(remoteMods, localRoots)
